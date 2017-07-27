@@ -1,9 +1,12 @@
 import QtQuick 2.0
+import com.genivi.hmicontroller 1.0
 
 Rectangle {
     id: sidebarContainer
 
     property int commonAnimationDuration
+
+    property ShutdownDbus shutdownDbus: ShutdownDbus {}
 
     signal goHome ()
     signal toggleTrayState ()
@@ -36,5 +39,17 @@ Rectangle {
         barTimerInterval: commonAnimationDuration
 
         onTrayPressed: toggleTrayState()
+    }
+
+    MouseArea {
+        height: parent.height * 0.225
+        width: parent.width
+        anchors.bottom: parent.bottom
+        onClicked: shutdownDbus.callDBusFunction()
+
+        Rectangle {
+            anchors.fill: parent
+            color: "red"
+        }
     }
 }

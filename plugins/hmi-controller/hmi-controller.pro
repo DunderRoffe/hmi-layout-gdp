@@ -20,7 +20,8 @@ SOURCES += \
     homeapplicationsmodel.cpp \
     applicationsmodelbase.cpp \
     lifecycleconsumer.cpp \
-    lifecycleconsumeradaptor.cpp
+    lifecycleconsumeradaptor.cpp \
+    statemachine_controller.cpp
 
 HEADERS += \
     hmi-controller_plugin.h \
@@ -32,7 +33,8 @@ HEADERS += \
     homeapplicationsmodel.h \
     applicationsmodelbase.h \
     lifecycleconsumer.h \
-    lifecycleconsumeradaptor.h
+    lifecycleconsumeradaptor.h \
+    statemachine_controller.h
 
 DISTFILES = qmldir
 
